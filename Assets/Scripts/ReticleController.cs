@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ReticleController : MonoBehaviour
-{
-    public float reticleSpeed;
+{   
+    [HideInInspector]
     public float reticleDepth;
+    [HideInInspector]
     public float responsivenessPercentage; // As Creamboy becomes meltier, the aiming becomes less responcive
 
     void Update() {

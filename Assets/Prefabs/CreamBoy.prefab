@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -916685423385219212}
   - component: {fileID: 3175205290954174315}
   - component: {fileID: 3838300087218710512}
-  - component: {fileID: 8176771120624083438}
+  - component: {fileID: 2127351274}
   m_Layer: 0
   m_Name: CreamBoy
   m_TagString: Untagged
@@ -65,8 +65,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674f25d6a864643b78018ed84fb33a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRatePerSecond: 2
-  shotSpeed: 200
+  fireRatePerSecond: 10
+  shotSpeed: 7
+  reticle: {fileID: 185557680653955818, guid: 670adbd41aab3b742acd89a839299956, type: 3}
+  reticleDepth: 3.8
+  responsivenessPercentage: 10
   projectile: {fileID: 8116697858890612796, guid: 269767c60e1ec4d98ab09922802a5459,
     type: 3}
 --- !u!114 &-916685423385219212
@@ -83,7 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhealth: 30
   currentHealth: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1791083238477960969, guid: 53ca91ab70e864b9db6cdb20cebb8c93,
+    type: 3}
 --- !u!212 &3175205290954174315
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -155,8 +159,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &8176771120624083438
-BoxCollider2D:
+--- !u!58 &2127351274
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -169,15 +173,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.57, y: 0.58}
-  m_EdgeRadius: 0
+  m_Radius: 0.29
