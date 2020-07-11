@@ -12,4 +12,10 @@ public class PlayerMovementController : MovementController
         CheckForJump(); // Unity is a bastard and doesn't handle jump inputs well in FixedInput
     }
 
+    protected override void CheckForJump() {
+        if (Input.GetButtonDown("Jump")) {
+            base.CheckForJump();
+        }
+    }
+
 }
