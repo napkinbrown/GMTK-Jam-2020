@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class PlayerMovementController : MovementController
 {
+
+    private bool isFreezing = false;
+
+    void OnEnable() {
+        EventManager.StartListening(EventNames.FREEZE_START, FreezeStart);
+        EventManager.StartListening(EventNames.FREEZE_STOP, FreezeStop);
+    }
+
+    void OnDisable() {
+        EventManager.StopListening(EventNames.FREEZE_START, FreezeStart);
+        EventManager.StopListening(EventNames.FREEZE_STOP, FreezeStop);
+    }
+    
     void FixedUpdate() {
         ApplySidewaysMovement();
     }
@@ -13,14 +26,29 @@ public class PlayerMovementController : MovementController
     }
     
     protected override void ApplySidewaysMovement() {
-        MoveSideways(rateOfAcceleration);
+        if(!isFreezing)
+        {
+            MoveSideways(rateOfAcceleration);
+        }
         base.ApplySidewaysMovement();
     }
 
     protected override void CheckForJump() {
-        if (Input.GetButtonDown("Jump")) {
-            base.CheckForJump();
+        if(!isFreezing){
+            if (Input.GetButtonDown("Jump")) {
+                base.CheckForJump();
+            }
         }
+    }
+
+    void FreezeStart() 
+    {
+        isFreezing = true;
+    }
+
+    void FreezeStop() 
+    {
+        isFreezing = false;
     }
 
 }
