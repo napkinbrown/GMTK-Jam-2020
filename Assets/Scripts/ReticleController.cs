@@ -12,8 +12,6 @@ public class ReticleController : MonoBehaviour
         Vector3 worldMousePosition = GetMouseWorldPosition();
         Vector3 nextPosition = Vector3.Lerp(this.transform.position, worldMousePosition, responsivenessPercentage / 100);
 
-        // Vector3 goalPosition = new Vector3(this.transform.position.x + relativeMousePosition.x, this.transform.position.y + relativeMousePosition.y);
-        // Vector3 newPosition = Vector3.Lerp(this.transform.position, goalPosition, responsiveness);
         this.transform.position = nextPosition;
     }
 
