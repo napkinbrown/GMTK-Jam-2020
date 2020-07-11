@@ -6,8 +6,12 @@ public class FreezeController : MonoBehaviour
 {
     private bool isFreezing = false;
     private bool waitForHealTick = false;
-    public float initHealRatePerSecond = .5f;
-    public float healthRateIncrease = 1;
+    public float initHealRatePerSecond = .6f;
+    public float healthRateIncrease = .2f;
+
+    public int ticksBetweenIncrease = 3;
+
+    private int tickCount = 0;
     private float healRate;
 
 
@@ -20,11 +24,9 @@ public class FreezeController : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire2")) {
-            Debug.Log("Starting Freeze");
             FreezeStart();
         }
         else if (Input.GetButtonUp("Fire2")) {
-            Debug.Log("Ending Freeze");
             FreezeEnd();
         }
 
@@ -40,6 +42,7 @@ public class FreezeController : MonoBehaviour
         EventManager.TriggerEvent(EventNames.FREEZE_START);
 
         isFreezing = true;
+
         //Handle particles?
     }
 
@@ -53,6 +56,7 @@ public class FreezeController : MonoBehaviour
         waitForHealTick = false;
         //Reset heal rate
         healRate = initHealRatePerSecond;
+        tickCount = 0;
 
         //Handle particles
     }
@@ -61,14 +65,20 @@ public class FreezeController : MonoBehaviour
     {
         // If I got here then I'm in freeze mode. I need to wait X number of seconds before I can do a heal tick. So this should be a coroutine
         waitForHealTick = true;
-        Debug.Log("Wait for heal tick start");
         yield return new WaitForSeconds(1/healRate);
         //If I let up the button before this timout is done then I'm not freezing anymore
         if(waitForHealTick) 
         {
-            Debug.Log("heal tick happenings");
             waitForHealTick = false;
-            //TODO modify healrate
+            tickCount += 1;
+
+            if(tickCount % ticksBetweenIncrease == 0) 
+            {
+                //modify healrate
+                healRate += healthRateIncrease;
+            }
+
+            //Let everyone know we're good to go
             EventManager.TriggerEvent(EventNames.FREEZE_TICK);
         }
     }
