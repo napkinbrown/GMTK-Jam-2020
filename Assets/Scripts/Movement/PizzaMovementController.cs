@@ -16,11 +16,8 @@ public class PizzaMovementController : MovementController
     }
 
     protected override void ApplySidewaysMovement() {
-        
-        GameObject playerObj = GameObject.FindWithTag("Player");
-        MoveSideways(rateOfAcceleration, playerObj);
-        CapHorizontalSpeed();
-
+        CheckForMove(GameObject.FindWithTag("Player"));
+        base.ApplySidewaysMovement();
     }
 
     protected override void CheckForJump() {

@@ -51,6 +51,7 @@ MonoBehaviour:
   jumpStrength: 8
   rateOfAcceleration: 200
   topHorizontalSpeed: 100
+  enemyPlayerDist: 5
   facingLeft: 1
   rb: {fileID: 5390654819521809576}
   lookDist: 5

@@ -7,6 +7,7 @@ public class MovementController : MonoBehaviour
     public float jumpStrength;
     public float rateOfAcceleration;
     public float topHorizontalSpeed;
+    public float enemyPlayerDist;
     public bool facingLeft;
     
     protected bool hasGroundJump;
@@ -34,8 +35,15 @@ public class MovementController : MonoBehaviour
     }
 
     protected virtual void ApplySidewaysMovement() {
-        MoveSideways(rateOfAcceleration);
         CapHorizontalSpeed();
+    }
+
+    protected void CheckForMove(GameObject target) {
+        
+        Vector2 dist = GetVectorDistance(target); 
+        
+        if (Mathf.Abs(dist.x) > enemyPlayerDist)
+            MoveSideways(rateOfAcceleration, dist);
     }
 
     // Move from input
@@ -44,15 +52,10 @@ public class MovementController : MonoBehaviour
         rb.AddForce(Vector2.right * displacement);
     }
 
-    // Move toward a target
-    protected void MoveSideways(float accelerationDelta, GameObject target) {
-
-        float dist = GetDistance(target); 
-
-        Debug.Log("Moving " + dist + " to " + target.gameObject.tag);
-
-        if (dist > 3)
-            rb.AddForce(new Vector2(dist, 0) * accelerationDelta);
+    // Move a specified distance
+    protected void MoveSideways(float accelerationDelta, Vector2 dist) {
+        Debug.Log("Moving " + dist);
+        rb.AddForce(dist * accelerationDelta);
     }
 
     protected void CapHorizontalSpeed() {
@@ -87,7 +90,13 @@ public class MovementController : MonoBehaviour
         rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse); 
     }
 
-    protected float GetDistance(GameObject thatObj) {
-        return Mathf.Abs(thatObj.transform.position.x - this.transform.position.x);
+    protected float GetDistance(GameObject target) {
+        return Mathf.Abs(target.transform.position.x - this.transform.position.x);
+    }
+    
+    protected Vector2 GetVectorDistance(GameObject target) {
+        Vector2 thisPos = new Vector2(this.transform.position.x, this.transform.position.y);
+        Vector2 thatPos = new Vector2(target.transform.position.x, target.transform.position.y);
+        return thatPos - thisPos;
     }
 }
