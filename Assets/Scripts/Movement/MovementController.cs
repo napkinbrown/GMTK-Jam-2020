@@ -18,7 +18,6 @@ public class MovementController : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
     }
 
-
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Ground") {
             hasGroundJump = true;
@@ -34,14 +33,26 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    protected void ApplySidewaysMovement() {
+    protected virtual void ApplySidewaysMovement() {
         MoveSideways(rateOfAcceleration);
         CapHorizontalSpeed();
     }
 
-    protected virtual void MoveSideways(float accelerationDelta) {
+    // Move from input
+    protected void MoveSideways(float accelerationDelta) {
         float displacement = Input.GetAxisRaw("Horizontal") * accelerationDelta;
         rb.AddForce(Vector2.right * displacement);
+    }
+
+    // Move toward a target
+    protected void MoveSideways(float accelerationDelta, GameObject target) {
+
+        float dist = GetDistance(target); 
+
+        Debug.Log("Moving " + dist + " to " + target.gameObject.tag);
+
+        if (dist > 3)
+            rb.AddForce(new Vector2(dist, 0) * accelerationDelta);
     }
 
     protected void CapHorizontalSpeed() {
@@ -68,11 +79,15 @@ public class MovementController : MonoBehaviour
         // Cast a ray up and into the facing direction
         RaycastHit2D ray = Physics2D.Raycast(transform.position, angle);
 
-        return ray.collider.gameObject;
+        return ray.collider ? ray.collider.gameObject : null;
     }
 
     protected void AddJumpForce() {
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse); 
+    }
+
+    protected float GetDistance(GameObject thatObj) {
+        return Mathf.Abs(thatObj.transform.position.x - this.transform.position.x);
     }
 }
