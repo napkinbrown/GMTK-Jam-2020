@@ -41,8 +41,7 @@ public class PlayerShotController : MonoBehaviour
 
     private Vector2 GetReticleDirection() {
         Vector2 heading = reticle.transform.position - this.transform.position;
-        Debug.DrawLine(this.transform.position, heading, Color.green, 50f);
-        return heading;
+        return heading.normalized;
     }
 
      IEnumerator ShootCooldown() {
