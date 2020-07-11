@@ -16,6 +16,18 @@ public class PlayerShotController : MonoBehaviour
     private ReticleController reticleController;
     private bool canShoot = true;
 
+    private bool isFreezing = false;
+
+    void OnEnable() {
+        EventManager.StartListening(EventNames.FREEZE_START, FreezeStart);
+        EventManager.StartListening(EventNames.FREEZE_STOP, FreezeStop);
+    }
+
+    void OnDisable() {
+        EventManager.StopListening(EventNames.FREEZE_START, FreezeStart);
+        EventManager.StopListening(EventNames.FREEZE_STOP, FreezeStop);
+    }
+
     void Start() {
         reticle = Instantiate(reticle);
         SetReticleParameters();
@@ -29,7 +41,7 @@ public class PlayerShotController : MonoBehaviour
 
      void Fire()
      {
-         if (canShoot){
+         if (canShoot && !this.isFreezing){
             GameObject bullet = Instantiate(projectile, gameObject.transform);
             bullet.GetComponent<Rigidbody2D>().AddForce(GetReticleDirection() * shotSpeed, ForceMode2D.Impulse);
 
@@ -58,4 +70,15 @@ public class PlayerShotController : MonoBehaviour
         }
     
     }
+
+        void FreezeStart() 
+    {
+        isFreezing = true;
+    }
+
+    void FreezeStop() 
+    {
+        isFreezing = false;
+    }
+
 }
