@@ -16,10 +16,8 @@ public class PlayerShotController : MonoBehaviour
          // Need to rate limit
          if (canShoot){
             // Have to create a bullet
-            GameObject go = Instantiate(projectile, gameObject.transform);
-            SprinkleScript bullet = go.GetComponent<SprinkleScript>();
-            bullet.targetVector = new Vector3(1,1,0);
-            bullet.speed = shotSpeed;
+            GameObject bullet = Instantiate(projectile, gameObject.transform);
+            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1,1) * shotSpeed, ForceMode2D.Impulse);
 
             //Go cooldown
             StartCoroutine(ShootCooldown());
@@ -33,7 +31,6 @@ public class PlayerShotController : MonoBehaviour
          canShoot = true;
      }
 
-    // Update is called once per frame
     void Update()
     {
         //TODO: Change to GetButton when we start rate limiting
