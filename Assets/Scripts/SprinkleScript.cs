@@ -4,30 +4,19 @@ using UnityEngine;
 
 public class SprinkleScript : MonoBehaviour
 {
-    public int speed = 50;          // The speed our bullet travels
-    public Vector3 targetVector;    // the direction it travels
-    public float lifetime = 10f;     // how long it lives before destroying itself
-    public float damage = 10;       // how much damage this projectile causes
+    public float lifetime;     // how long it lives before destroying itself
+    public float damage;       // how much damage this projectile causes
 
     private SpriteRenderer spriteRenderer;
     public Sprite sprinkle1;
     public Sprite sprinkle2;
     public Sprite sprinkle3;
     public Sprite sprinkle4;
-
- 
     
-    // Start is called before the first frame update
     void Start()
     {
-
-        PickStartColor();
- 
-        
-         // find our RigidBody
         Rigidbody2D rb = gameObject.GetComponentInChildren<Rigidbody2D>();
-        // add force 
-        rb.AddForce(targetVector.normalized * speed);
+        PickStartColor();
     }
 
     void PickStartColor()

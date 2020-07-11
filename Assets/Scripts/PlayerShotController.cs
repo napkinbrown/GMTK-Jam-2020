@@ -8,19 +8,12 @@ public class PlayerShotController : MonoBehaviour
     public int shotSpeed = 200;
     public GameObject projectile;
 
-     void Fire()
-     {
-         // Need to rate limit
-         // Have to create a bullet
-         // Have to make sure that bullet has physics
+    void Fire()
+    {
+        GameObject bullet = Instantiate(projectile, gameObject.transform);
+        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1,1) * shotSpeed, ForceMode2D.Impulse);
+    }
 
-        GameObject go = Instantiate(projectile, gameObject.transform);
-        SprinkleScript bullet = go.GetComponent<SprinkleScript>();
-        bullet.targetVector = new Vector3(1,1,0);
-        bullet.speed = shotSpeed;
-     }
-
-    // Update is called once per frame
     void Update()
     {
         //TODO: Change to GetButton when we start rate limiting
