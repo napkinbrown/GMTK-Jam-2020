@@ -414,26 +414,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreamBoyPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 1155970465442662073, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: airAcceleration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155970465442662073, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: rateOfAcceleration
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155970465442662073, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: dragStrength
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155970465442662073, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: topHorizontalSpeed
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 1657450961079225631, guid: cd57db66d448944babebb4f0471022b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -488,11 +468,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838300087218710512, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: m_LinearDrag
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd57db66d448944babebb4f0471022b1, type: 3}

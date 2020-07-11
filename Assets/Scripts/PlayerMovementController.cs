@@ -9,8 +9,6 @@ public class PlayerMovementController : MonoBehaviour
     public float jumpStrength;
     public float rateOfAcceleration;
     public float topHorizontalSpeed;
-    public float airAcceleration;
-    public float airDrag;
     
     private bool hasGroundJump;
     private bool hasDoubleJump;

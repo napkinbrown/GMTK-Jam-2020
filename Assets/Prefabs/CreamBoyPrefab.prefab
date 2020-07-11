@@ -48,10 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 3838300087218710512}
   jumpStrength: 5
-  rateOfAcceleration: 100
+  rateOfAcceleration: 20
   topHorizontalSpeed: 100
-  dragStrength: 100
-  airSpeed: 0
+  airAcceleration: 1
   airDrag: 0
 --- !u!212 &3175205290954174315
 SpriteRenderer:
@@ -116,7 +115,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
