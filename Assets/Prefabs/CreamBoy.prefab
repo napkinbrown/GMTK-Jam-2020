@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2337357014895117695}
   m_Layer: 0
-  m_Name: Cream Boy
+  m_Name: CreamBoy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,23 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2337357015134647672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2641361644030101173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2d613d12a6b07d4cb85c0a5303dee68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpStrength: 8
-  rateOfAcceleration: 200
-  topHorizontalSpeed: 100
-  facingLeft: 0
-  rb: {fileID: 1525475926655427762}
 --- !u!1 &2337357015790007081
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +44,7 @@ GameObject:
   - component: {fileID: 2337357015790007082}
   - component: {fileID: 2337357015790007083}
   - component: {fileID: 2337357015790007076}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CreamBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,8 +59,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2337357015790007081}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.026, y: -0.323, z: -0.1}
-  m_LocalScale: {x: 0.48000002, y: 0.48000002, z: 1}
+  m_LocalPosition: {x: 0.026, y: -0.323, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.55, z: 1}
   m_Children: []
   m_Father: {fileID: 2337357014895117695}
   m_RootOrder: 1
@@ -133,8 +116,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 709083941
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 37859c41744d8894d97580bc5784d4e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -159,7 +142,7 @@ GameObject:
   - component: {fileID: 2337357015990570404}
   - component: {fileID: 2337357015990570411}
   - component: {fileID: 2337357015990570410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ConeHat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2337357015990570408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.274, y: 0.405, z: -0.1}
+  m_LocalPosition: {x: 0.274, y: 0.405, z: 0}
   m_LocalScale: {x: 0.48000002, y: 0.48000002, z: 1}
   m_Children: []
   m_Father: {fileID: 2337357014895117695}
@@ -193,8 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2641361644030101173}
-  xOffset: 0.25
-  yOffset: 0.35
+  xOffset: 0.27
+  yOffset: 0.4
 --- !u!212 &2337357015990570411
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -231,8 +214,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 709083941
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6dfa57610c827694682cb2ed0028defd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -266,6 +249,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2337357015134647672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641361644030101173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d613d12a6b07d4cb85c0a5303dee68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpStrength: 8
+  rateOfAcceleration: 200
+  topHorizontalSpeed: 100
+  facingLeft: 0
+  rb: {fileID: 1525475926655427762}
 --- !u!1001 &2337357014888432450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,6 +289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Scoop
+      objectReference: {fileID: 0}
+    - target: {fileID: 344514073757533687, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1657450961079225631, guid: cd57db66d448944babebb4f0471022b1,
         type: 3}
@@ -364,6 +369,16 @@ PrefabInstance:
     - target: {fileID: 3175205290954174315, guid: cd57db66d448944babebb4f0471022b1,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175205290954174315, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1947713209
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175205290954174315, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:

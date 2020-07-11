@@ -7,11 +7,11 @@ public class FixRotation : MonoBehaviour
     public GameObject player;
     public float xOffset;
     public float yOffset;
-    private Vector3 offset;
+    private Vector2 offset;
 
     public void LateUpdate() {
-        offset = new Vector3(player.transform.position.x + xOffset,
-                player.transform.position.y + yOffset, -.2F);
+        offset = new Vector2(player.transform.position.x + xOffset,
+                player.transform.position.y + yOffset);
         transform.position = offset;
     }
 }
