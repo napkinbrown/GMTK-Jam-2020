@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShotController : MonoBehaviour
 {
     
-    public float rateOfFirePerSecond = 2;
+    public float fireRatePerSecond = 2;
     public int shotSpeed = 200;
     public GameObject projectile;
 
@@ -29,7 +29,7 @@ public class PlayerShotController : MonoBehaviour
 
      IEnumerator ShootCooldown() {
          canShoot = false;
-         yield return new WaitForSeconds(1/rateOfFirePerSecond);
+         yield return new WaitForSeconds(1/fireRatePerSecond);
          canShoot = true;
      }
 
