@@ -18,7 +18,6 @@ public class MovementController : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
     }
 
-
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Ground") {
             hasGroundJump = true;
@@ -34,14 +33,20 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    protected void ApplySidewaysMovement() {
-        MoveSideways(rateOfAcceleration);
+    protected virtual void ApplySidewaysMovement() {
         CapHorizontalSpeed();
     }
 
-    protected virtual void MoveSideways(float accelerationDelta) {
+    // Move from input
+    protected void MoveSideways(float accelerationDelta) {
         float displacement = Input.GetAxisRaw("Horizontal") * accelerationDelta;
         rb.AddForce(Vector2.right * displacement);
+    }
+
+    // Move a specified distance
+    protected void MoveSideways(float accelerationDelta, Vector2 dist) {
+        Debug.Log("Moving " + dist);
+        rb.AddForce(dist * accelerationDelta);
     }
 
     protected void CapHorizontalSpeed() {
@@ -60,19 +65,18 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    protected virtual GameObject CheckForPlatform() {
-        // Will need to check direction facing at an angle
-        Vector2 angle = facingLeft ? 
-            this.transform.up - this.transform.right : this.transform.up + transform.right;
-
-        // Cast a ray up and into the facing direction
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, angle);
-
-        return ray.collider.gameObject;
-    }
-
     protected void AddJumpForce() {
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse); 
+    }
+
+    protected float GetDistance(GameObject target) {
+        return Mathf.Abs(target.transform.position.x - this.transform.position.x);
+    }
+    
+    protected Vector2 GetVectorDistance(GameObject target) {
+        Vector2 thisPos = new Vector2(this.transform.position.x, this.transform.position.y);
+        Vector2 thatPos = new Vector2(target.transform.position.x, target.transform.position.y);
+        return thatPos - thisPos;
     }
 }

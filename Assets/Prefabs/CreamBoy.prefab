@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8176771120624083438}
   m_Layer: 0
   m_Name: CreamBoy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d613d12a6b07d4cb85c0a5303dee68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpStrength: 7
+  jumpStrength: 8
   rateOfAcceleration: 200
   topHorizontalSpeed: 100
   facingLeft: 0

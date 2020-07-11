@@ -11,6 +11,11 @@ public class PlayerMovementController : MovementController
     void Update() {
         CheckForJump(); // Unity is a bastard and doesn't handle jump inputs well in FixedInput
     }
+    
+    protected override void ApplySidewaysMovement() {
+        MoveSideways(rateOfAcceleration);
+        base.ApplySidewaysMovement();
+    }
 
     protected override void CheckForJump() {
         if (Input.GetButtonDown("Jump")) {
