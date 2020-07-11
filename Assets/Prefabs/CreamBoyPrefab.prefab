@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1657450961079225631}
   - component: {fileID: 3175205290954174315}
+  - component: {fileID: -4640812481867995157}
   m_Layer: 0
-  m_Name: CreamBoy
+  m_Name: CreamBoyPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,3 +82,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4640812481867995157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344514073757533687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674f25d6a864643b78018ed84fb33a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rateOfFire: 0
+  shotSpeed: 200
+  projectile: {fileID: 8116697858890612796, guid: 269767c60e1ec4d98ab09922802a5459,
+    type: 3}
