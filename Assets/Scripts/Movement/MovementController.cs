@@ -7,7 +7,6 @@ public class MovementController : MonoBehaviour
     public float jumpStrength;
     public float rateOfAcceleration;
     public float topHorizontalSpeed;
-    public float enemyPlayerDist;
     public bool facingLeft;
     
     protected bool hasGroundJump;
@@ -38,14 +37,6 @@ public class MovementController : MonoBehaviour
         CapHorizontalSpeed();
     }
 
-    protected void CheckForMove(GameObject target) {
-        
-        Vector2 dist = GetVectorDistance(target); 
-        
-        if (Mathf.Abs(dist.x) > enemyPlayerDist)
-            MoveSideways(rateOfAcceleration, dist);
-    }
-
     // Move from input
     protected void MoveSideways(float accelerationDelta) {
         float displacement = Input.GetAxisRaw("Horizontal") * accelerationDelta;
@@ -72,17 +63,6 @@ public class MovementController : MonoBehaviour
             AddJumpForce();
             hasDoubleJump = false;
         }
-    }
-
-    protected virtual GameObject CheckForPlatform() {
-        // Will need to check direction facing at an angle
-        Vector2 angle = facingLeft ? 
-            this.transform.up - this.transform.right : this.transform.up + transform.right;
-
-        // Cast a ray up and into the facing direction
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, angle);
-
-        return ray.collider ? ray.collider.gameObject : null;
     }
 
     protected void AddJumpForce() {

@@ -2,22 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PizzaMovementController : MovementController
+public class PizzaMovementController : EnemyMovementController
 {
-
-    public float lookDist;
-
-    void FixedUpdate() {
-        ApplySidewaysMovement();
-    }
 
     void Update() {
         CheckForJump(); // Unity is a bastard and doesn't handle jump inputs well in FixedInput
-    }
-
-    protected override void ApplySidewaysMovement() {
-        CheckForMove(GameObject.FindWithTag("Player"));
-        base.ApplySidewaysMovement();
     }
 
     protected override void CheckForJump() {
