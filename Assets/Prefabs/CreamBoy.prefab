@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1657450961079225631}
-  - component: {fileID: 1155970465442662073}
+  - component: {fileID: 6372443839826338265}
   - component: {fileID: 3175205290954174315}
   - component: {fileID: 3838300087218710512}
   - component: {fileID: 8176771120624083438}
   - component: {fileID: -6027297628337274867}
   m_Layer: 0
-  m_Name: CreamBoyPrefab
+  m_Name: CreamBoy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1155970465442662073
+--- !u!114 &6372443839826338265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,13 +44,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 344514073757533687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490ba0e8bf365a4419c05b2a47ce26c5, type: 3}
+  m_Script: {fileID: 11500000, guid: a2d613d12a6b07d4cb85c0a5303dee68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 3838300087218710512}
-  jumpStrength: 5
-  rateOfAcceleration: 20
+  jumpStrength: 7
+  rateOfAcceleration: 200
   topHorizontalSpeed: 100
+  rb: {fileID: 3838300087218710512}
 --- !u!212 &3175205290954174315
 SpriteRenderer:
   m_ObjectHideFlags: 0
