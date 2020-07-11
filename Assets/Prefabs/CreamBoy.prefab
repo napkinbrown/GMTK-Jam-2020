@@ -101,8 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f0d6b2e33d04de5a5b9619c205a1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initHealRatePerSecond: 0.5
-  healthRateIncrease: 1
+  initHealRatePerSecond: 0.6
+  healthRateIncrease: 0.1
+  ticksBetweenIncrease: 3
 --- !u!212 &3175205290954174315
 SpriteRenderer:
   m_ObjectHideFlags: 0
