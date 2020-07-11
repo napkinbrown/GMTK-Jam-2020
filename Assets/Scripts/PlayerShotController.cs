@@ -7,23 +7,42 @@ public class PlayerShotController : MonoBehaviour
     
     public float fireRatePerSecond = 2;
     public int shotSpeed = 200;
+    public GameObject reticle;
+    public float reticleDepth;
+    public float responsivenessPercentage;
+
     public GameObject projectile;
 
+    private ReticleController reticleController;
     private bool canShoot = true;
+
+    void Start() {
+        reticle = Instantiate(reticle);
+        SetReticleParameters();
+    }
+
+    void SetReticleParameters() {
+        reticleController = reticle.GetComponent<ReticleController>();
+        reticleController.reticleDepth = this.reticleDepth;
+        reticleController.responsivenessPercentage = this.responsivenessPercentage;
+    }
 
      void Fire()
      {
-         // Need to rate limit
          if (canShoot){
-            // Have to create a bullet
             GameObject bullet = Instantiate(projectile, gameObject.transform);
-            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1,1) * shotSpeed, ForceMode2D.Impulse);
+            bullet.GetComponent<Rigidbody2D>().AddForce(GetReticleDirection() * shotSpeed, ForceMode2D.Impulse);
 
             //Go cooldown
             StartCoroutine(ShootCooldown());
          }
         
      }
+
+    private Vector2 GetReticleDirection() {
+        Vector2 heading = reticle.transform.position - this.transform.position;
+        return heading.normalized;
+    }
 
      IEnumerator ShootCooldown() {
          canShoot = false;
@@ -37,6 +56,6 @@ public class PlayerShotController : MonoBehaviour
         if (Input.GetButton("Fire1")){
              Fire();
         }
-        
+    
     }
 }
