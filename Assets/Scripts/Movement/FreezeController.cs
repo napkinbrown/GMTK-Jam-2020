@@ -12,7 +12,9 @@ public class FreezeController : MonoBehaviour
     public int ticksBetweenIncrease = 3;
 
     private int tickCount = 0;
-    private float healRate;
+
+    [HideInInspector]
+    public float healRate;
 
 
     void Start()
@@ -76,6 +78,7 @@ public class FreezeController : MonoBehaviour
             {
                 //modify healrate
                 healRate += healthRateIncrease;
+                Debug.Log("Heal Rate Increased: " + healRate);
             }
 
             //Let everyone know we're good to go

@@ -8,6 +8,8 @@ public class PlayerHealthController : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
+    private FreezeController freezeController;
+
     
     void OnEnable() {
         EventManager.StartListening(EventNames.FREEZE_TICK, FreezeHeal);
@@ -22,15 +24,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth = maxhealth;
         healthBar.SetMaxHealth(maxhealth);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //TODO track damage better, but for now this tests health
-        if(Input.GetKeyDown(KeyCode.D)) {
-            DamageCharacter(1);
-        }
+        freezeController = this.GetComponentInParent<FreezeController>();
     }
 
     void DamageCharacter(int damage) 
@@ -57,6 +51,6 @@ public class PlayerHealthController : MonoBehaviour
 
     void FreezeHeal() 
     {
-        HealCharacter(1);
+        HealCharacter((int) freezeController.healRate);
     }
 }
