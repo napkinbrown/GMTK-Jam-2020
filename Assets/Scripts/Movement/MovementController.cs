@@ -71,7 +71,7 @@ public class MovementController : MonoBehaviour
     }
 
     protected float GetDistance(GameObject target) {
-        return Mathf.Abs(target.transform.position.x - this.transform.position.x);
+        return target.transform.position.x - this.transform.position.x;
     }
     
     protected Vector2 GetVectorDistance(GameObject target) {
