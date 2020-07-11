@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreamBoyScript : MonoBehaviour
+public class PlayerShotController : MonoBehaviour
 {
     public float rateOfFire;
-    public int shotSpeed = 50;
+    public int shotSpeed = 200;
     public GameObject projectile;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
      void Fire()
      {
