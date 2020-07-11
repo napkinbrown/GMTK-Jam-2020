@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1657450961079225631}
   - component: {fileID: 6372443839826338265}
   - component: {fileID: -6027297628337274867}
+  - component: {fileID: -916685423385219212}
   - component: {fileID: 3175205290954174315}
   - component: {fileID: 3838300087218710512}
   - component: {fileID: 8176771120624083438}
@@ -50,6 +51,7 @@ MonoBehaviour:
   jumpStrength: 7
   rateOfAcceleration: 200
   topHorizontalSpeed: 100
+  facingLeft: 0
   rb: {fileID: 3838300087218710512}
 --- !u!114 &-6027297628337274867
 MonoBehaviour:
@@ -63,10 +65,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674f25d6a864643b78018ed84fb33a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 0
-  shotSpeed: 8526
+  fireRatePerSecond: 2
+  shotSpeed: 200
   projectile: {fileID: 8116697858890612796, guid: 269767c60e1ec4d98ab09922802a5459,
     type: 3}
+--- !u!114 &-916685423385219212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344514073757533687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7441d5c1d0749a5b36a3a3992f86b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxhealth: 30
+  currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!212 &3175205290954174315
 SpriteRenderer:
   m_ObjectHideFlags: 0
