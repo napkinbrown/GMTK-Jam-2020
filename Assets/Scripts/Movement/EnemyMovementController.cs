@@ -6,13 +6,16 @@ public class EnemyMovementController : MovementController
 {
     public float enemyPlayerDist;
     public float lookDist;
+    public SpriteRenderer sprite;
+    public GameObject player;
 
     void FixedUpdate() {
         ApplySidewaysMovement();
+        CheckDirection();
     }
 
     protected override void ApplySidewaysMovement() {
-        CheckForMove(GameObject.FindWithTag("Player"));
+        CheckForMove(player);
         base.ApplySidewaysMovement();
     }
 
@@ -22,6 +25,10 @@ public class EnemyMovementController : MovementController
         
         if (Mathf.Abs(dist.x) > enemyPlayerDist)
             MoveSideways(rateOfAcceleration, dist);
+    }
+
+    protected void CheckDirection() {
+        sprite.flipX = GetDistance(player) > 0 ? true : false;
     }
     
     protected virtual GameObject CheckForPlatform() {

@@ -16,7 +16,7 @@ public class PizzaMovementController : EnemyMovementController
         // If object detected at angle + dist and not straight up, jump
         // Also need to check player position is higher/lower
         if (obj && obj.tag == "Ground") {
-            float dist = GetDistance(obj);
+            float dist = Mathf.Abs(GetDistance(obj));
 
             if (dist <= lookDist) {
                 base.CheckForJump();
