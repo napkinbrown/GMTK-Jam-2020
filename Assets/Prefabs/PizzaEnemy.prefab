@@ -49,12 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpStrength: 8
-  rateOfAcceleration: 200
-  topHorizontalSpeed: 100
+  rateOfAcceleration: 10
+  topHorizontalSpeed: 10
   facingLeft: 1
   rb: {fileID: 5390654819521809576}
-  enemyPlayerDist: 4
-  lookDist: 5
+  enemyPlayerDist: 1
+  lookDist: 1
   sprite: {fileID: 3878623351400061708}
   player: {fileID: 0}
 --- !u!212 &3878623351400061708
