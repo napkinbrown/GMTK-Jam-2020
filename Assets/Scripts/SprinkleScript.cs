@@ -14,7 +14,7 @@ public class SprinkleScript : MonoBehaviour
     public Sprite sprinkle2;
     public Sprite sprinkle3;
     public Sprite sprinkle4;
-    private bool hasAColor = false;
+
  
     
     // Start is called before the first frame update
@@ -36,18 +36,17 @@ public class SprinkleScript : MonoBehaviour
         switch (Random.Range(1, 5))
         {
             case 1:
-                spriteRenderer.sprite = Instantiate(sprinkle2);
+                spriteRenderer.sprite = sprinkle2;
                 break;
             case 2:
-                spriteRenderer.sprite = Instantiate(sprinkle3);
+                spriteRenderer.sprite = sprinkle3;
                 break;
             case 3:
-                spriteRenderer.sprite = Instantiate(sprinkle4);
+                spriteRenderer.sprite = sprinkle4;
                 break;
             case 4:
                 //Default is already set in the prefab
-                Debug.Log("we shot the shot");
-                spriteRenderer.sprite = Instantiate(sprinkle1);
+                spriteRenderer.sprite = sprinkle1;
                 break;
         }
     }
@@ -55,10 +54,6 @@ public class SprinkleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if(!hasAColor){
-        //     PickStartColor();
-        //     hasAColor = true;
-        // }
         // decrease our life timer
         lifetime -= Time.deltaTime;
         if (lifetime <= 0f) {
