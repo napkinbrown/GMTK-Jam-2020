@@ -19,7 +19,7 @@ public abstract class EntityHealthController : MonoBehaviour
             currentHealth -= damage;
         }
 
-        if(damage <= 0) {
+        if(currentHealth <= 0) {
             Die();
         }
     }
