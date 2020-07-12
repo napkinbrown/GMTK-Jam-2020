@@ -8,6 +8,7 @@ public class PlayerShotController : MonoBehaviour
     public float fireRatePerSecond = 2;
     public int shotSpeed = 200;
     public GameObject reticle;
+    public AudioSource fireSoundEffect;
     public float phase1ResponsivenessPercentage;
     public float phase2ResponsivenessPercentage;
     public float phase3ResponsivenessPercentage;
@@ -47,8 +48,7 @@ public class PlayerShotController : MonoBehaviour
          if (canShoot && !this.isFreezing){
             GameObject bullet = Instantiate(projectile, gameObject.transform);
             bullet.GetComponent<Rigidbody2D>().AddForce(GetReticleDirection() * shotSpeed, ForceMode2D.Impulse);
-
-            //Go cooldown
+            fireSoundEffect.Play();
             StartCoroutine(ShootCooldown());
          }
         
