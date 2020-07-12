@@ -5,7 +5,7 @@ using UnityEngine;
 public class SprinkleScript : MonoBehaviour
 {
     public float lifetime;     // how long it lives before destroying itself
-    public float damage;       // how much damage this projectile causes
+    public int damage;       // how much damage this projectile causes
 
     private SpriteRenderer spriteRenderer;
     public Sprite sprinkle1;
@@ -18,6 +18,16 @@ public class SprinkleScript : MonoBehaviour
         Rigidbody2D rb = gameObject.GetComponentInChildren<Rigidbody2D>();
         PickStartColor();
     }
+
+
+    void OnTriggerEnter2D(Collider2D other) {
+        EntityHealthController healthController = other.gameObject.GetComponent<EntityHealthController>();
+        if (healthController && healthController.GetType() != typeof(PlayerHealthController)) {
+            Debug.Log("Hit " + other.gameObject);
+            healthController.DamageCharacter(damage);
+        }
+    }
+
 
     void PickStartColor()
     {
