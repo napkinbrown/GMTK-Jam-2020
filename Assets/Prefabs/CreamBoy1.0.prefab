@@ -54,7 +54,7 @@ MonoBehaviour:
   reticle: {fileID: 185557680653955818, guid: 670adbd41aab3b742acd89a839299956, type: 3}
   phase1ResponsivenessPercentage: 100
   phase2ResponsivenessPercentage: 20
-  phase3ResponsivenessPercentage: 3
+  phase3ResponsivenessPercentage: 1
   projectile: {fileID: 8116697858890612796, guid: 269767c60e1ec4d98ab09922802a5459,
     type: 3}
   healthController: {fileID: -916685423385219212}
