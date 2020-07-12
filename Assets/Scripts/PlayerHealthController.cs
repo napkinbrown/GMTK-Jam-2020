@@ -129,6 +129,6 @@ public class PlayerHealthController : EntityHealthController
 
     protected override void Die() {
         EventManager.TriggerEvent(EventNames.PLAYER_DIED);
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 }
