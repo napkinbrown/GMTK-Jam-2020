@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
 
     void RestartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    
+    }
+
     private void NextWave() {
         StartCoroutine(BeginWave());
     }
