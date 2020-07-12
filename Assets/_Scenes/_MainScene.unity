@@ -2413,36 +2413,22 @@ PrefabInstance:
         type: 3}
       propertyPath: pizzaEnemy
       value: 
-<<<<<<< HEAD
       objectReference: {fileID: 25144489}
     - target: {fileID: 880311111076842501, guid: 1395f37d597374d65a7ac2656e99a348,
         type: 3}
       propertyPath: broccoliEnemy
       value: 
       objectReference: {fileID: 1794401267}
-=======
-      objectReference: {fileID: 870255071624543409, guid: 8608b9f54b84a864692ffdad1e4f1f5a,
-        type: 3}
->>>>>>> 5cf004ed172ce50fd3685ca817084dae6bbd5d47
     - target: {fileID: 880311111076842501, guid: 1395f37d597374d65a7ac2656e99a348,
         type: 3}
       propertyPath: waveSpawner
       value: 
-<<<<<<< HEAD
       objectReference: {fileID: 1269820971}
-=======
-      objectReference: {fileID: 5607225574224630456, guid: db10fd7d2b73191449cfb6db1ff91f7b,
-        type: 3}
->>>>>>> 5cf004ed172ce50fd3685ca817084dae6bbd5d47
     - target: {fileID: 880311111076842501, guid: 1395f37d597374d65a7ac2656e99a348,
         type: 3}
       propertyPath: player
       value: 
-<<<<<<< HEAD
       objectReference: {fileID: 1292990292}
-=======
-      objectReference: {fileID: 1282066043}
->>>>>>> 5cf004ed172ce50fd3685ca817084dae6bbd5d47
     - target: {fileID: 6550580343783445286, guid: 1395f37d597374d65a7ac2656e99a348,
         type: 3}
       propertyPath: m_Name
@@ -3042,7 +3028,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248770778}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
 --- !u!1 &1269820971 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5607225574224630456, guid: db10fd7d2b73191449cfb6db1ff91f7b,
@@ -3050,9 +3035,6 @@ GameObject:
   m_PrefabInstance: {fileID: 125037500}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1292990292 stripped
-=======
---- !u!1 &1282066043 stripped
->>>>>>> 5cf004ed172ce50fd3685ca817084dae6bbd5d47
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2641361644030101173, guid: 16a6b5d807acbdd499f7d113bcc71fb9,
     type: 3}
@@ -4178,7 +4160,6 @@ Transform:
   m_Father: {fileID: 1762368913}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
-<<<<<<< HEAD
 --- !u!1001 &2104298966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4258,7 +4239,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8608b9f54b84a864692ffdad1e4f1f5a, type: 3}
-=======
 --- !u!1 &2047540109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4386,4 +4366,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 5cf004ed172ce50fd3685ca817084dae6bbd5d47
