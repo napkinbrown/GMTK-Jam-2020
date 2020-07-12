@@ -430,6 +430,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 879690045640295247, guid: 16a6b5d807acbdd499f7d113bcc71fb9,
+        type: 3}
+      propertyPath: phase3ResponsivenessPercentage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 879690045640295247, guid: 16a6b5d807acbdd499f7d113bcc71fb9,
+        type: 3}
+      propertyPath: phase1ResponsivenessPercentage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 879690045640295247, guid: 16a6b5d807acbdd499f7d113bcc71fb9,
+        type: 3}
+      propertyPath: phase2ResponsivenessPercentage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2337357014895117694, guid: 16a6b5d807acbdd499f7d113bcc71fb9,
         type: 3}
       propertyPath: m_Name
