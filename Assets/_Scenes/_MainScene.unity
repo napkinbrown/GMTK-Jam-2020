@@ -3612,6 +3612,115 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483229128}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1495214657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 600526294282334387, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_Name
+      value: FreezeParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 600526294282334387, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064623306709723023, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006703593204255525, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 925746525}
+    - target: {fileID: 9045722434590975997, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 12.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045722434590975997, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: ShapeModule.donutRadius
+      value: 8.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045722434590975997, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045722434590975997, guid: 5b847b79f59b94fbe9b85687ec17883e,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].repeatInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b847b79f59b94fbe9b85687ec17883e, type: 3}
 --- !u!1 &1500328501
 GameObject:
   m_ObjectHideFlags: 0
