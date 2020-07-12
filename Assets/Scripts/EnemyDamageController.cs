@@ -14,8 +14,6 @@ public class EnemyDamageController : MonoBehaviour
     }
     
     void OnTriggerStay2D(Collider2D other) {
-        Debug.Log(other.gameObject.tag);
-
         if(other.gameObject.tag == "Player") {
             if (!damageOnCooldown) {
                 other.gameObject.GetComponent<EntityHealthController>().DamageCharacter(damageDealtPerTic);

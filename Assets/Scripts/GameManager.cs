@@ -6,9 +6,18 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
     public YouDied deathMessage;
+    public int waveWaitTime;
+    
      void OnEnable() {
         EventManager.StartListening(EventNames.PLAYER_DIED, HeDead);
+    }
+    
+    void Start()
+    {
+        NextWave();
+        EventManager.StartListening(EventNames.WAVE_END, NextWave);
     }
 
     void OnDisable() {
@@ -22,5 +31,13 @@ public class GameManager : MonoBehaviour
 
     void RestartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    
+    private void NextWave() {
+        StartCoroutine(BeginWave());
+    }
+
+    IEnumerator BeginWave() {
+        yield return new WaitForSeconds(waveWaitTime);
+        EventManager.TriggerEvent(EventNames.WAVE_START);
     }
 }
