@@ -26,7 +26,6 @@ public class FreezeController : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire2")) {
-            Debug.Log("starting freeze");
             FreezeStart();
         }
         else if (Input.GetButtonUp("Fire2")) {
