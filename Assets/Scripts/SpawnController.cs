@@ -18,6 +18,7 @@ public class SpawnController : MonoBehaviour
         wave = 1;
         SetEnemyObjects();
         BeginSpawning();
+        EventManager.TriggerEvent(EventNames.WAVE_START);
         EventManager.StartListening(EventNames.ENEMY_DIED, EnemyDied);
     }
 
@@ -31,8 +32,14 @@ public class SpawnController : MonoBehaviour
 
         currentWave = waveSpawner.transform.GetChild(wave).
                             gameObject.GetComponent<WaveController>();
-        numEnemies = currentWave.numEnemies;
-        SpawnWave(numEnemies);
+        if (currentWave) {
+            numEnemies = currentWave.numEnemies;
+            SpawnWave(numEnemies);
+        } else {
+            Debug.Log("No more waves found, game ending.")
+            EventManager.TriggerEvent(EventNames.GAME_WON);
+        }
+
     }
 
     private void SpawnWave(int enemiesToSpawn) {
@@ -50,7 +57,11 @@ public class SpawnController : MonoBehaviour
     }
 
     private void CheckWaveFinished() {
-
+        if (numEnemies <= 0) {
+            Debug.Log("All enemies dead, wave ended.")
+            wave++;
+            EventManager.TriggerEvent(EventNames.WAVE_END);
+        }
     }
 
     private void SpawnEnemy(GameObject enemy, Transform point, int count) {
