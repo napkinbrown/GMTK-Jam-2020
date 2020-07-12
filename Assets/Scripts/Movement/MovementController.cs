@@ -93,4 +93,9 @@ public class MovementController : MonoBehaviour
         Vector2 thatPos = new Vector2(target.transform.position.x, target.transform.position.y);
         return thatPos - thisPos;
     }
+    
+    public Vector2 GetRandomVector(float angle, float angleMin){
+        float random = Random.value * angle + angleMin;
+        return new Vector2(Mathf.Cos(random), Mathf.Sin(random));
+    }
 }

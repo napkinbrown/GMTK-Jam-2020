@@ -8,6 +8,11 @@ public class PlayerHealthController : EntityHealthController
     public float meltingDelayInSecs;
     public HealthBar healthBar;
 
+    public Sprite phase1Sprite;
+    public Sprite phase2Sprite;
+    public Sprite phase3Sprite;
+
+    private SpriteRenderer spriteRenderer;
     private FreezeController freezeController;
     private bool isFreezing;
     private bool doMeltingDamage;
@@ -45,10 +50,12 @@ public class PlayerHealthController : EntityHealthController
         healthBar.SetMaxHealth(maxhealth);
         freezeController = this.GetComponentInParent<FreezeController>();
         doMeltingDamage = true;
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
 
     void Update() {
         ApplyMeltingDamage();
+        CheckForSpriteSwap();
     }
 
     void ApplyMeltingDamage() {
@@ -56,6 +63,23 @@ public class PlayerHealthController : EntityHealthController
             // Debug.Log()
             DamageCharacter(meltingDamage);
             StartCoroutine(CoolDownMeltingDamage());
+        }
+    }
+
+    void CheckForSpriteSwap()
+    {
+        
+        switch(GetHealthPhase())
+        {
+            case HealthPhase.Solid:
+                spriteRenderer.sprite = phase1Sprite;
+                break;
+            case HealthPhase.Melty:
+                spriteRenderer.sprite = phase2Sprite;
+                break;
+            case HealthPhase.Melted:
+                spriteRenderer.sprite = phase3Sprite;
+                break;
         }
     }
 
