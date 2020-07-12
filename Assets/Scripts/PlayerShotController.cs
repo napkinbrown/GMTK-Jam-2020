@@ -8,7 +8,6 @@ public class PlayerShotController : MonoBehaviour
     public float fireRatePerSecond = 2;
     public int shotSpeed = 200;
     public GameObject reticle;
-    public float reticleDepth;
     public float responsivenessPercentage;
 
     public GameObject projectile;
@@ -35,7 +34,7 @@ public class PlayerShotController : MonoBehaviour
 
     void SetReticleParameters() {
         reticleController = reticle.GetComponent<ReticleController>();
-        reticleController.reticleDepth = this.reticleDepth;
+        reticleController.reticleDepth = Camera.main.WorldToScreenPoint(this.transform.transform.position).z;
         reticleController.responsivenessPercentage = this.responsivenessPercentage;
     }
 
