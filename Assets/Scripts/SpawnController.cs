@@ -55,7 +55,8 @@ public class SpawnController : MonoBehaviour
 
     private void SpawnEnemy(GameObject enemy, Transform point, int count) {
         for (int i = 0; i < count; i++) {
-            Instantiate(enemy, point);
+            GameObject spawned = Instantiate(enemy, point.position + point.forward, point.rotation);
+            spawned.SetActive(true);
         }
     }
 
