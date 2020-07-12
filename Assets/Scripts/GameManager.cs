@@ -8,9 +8,16 @@ public class GameManager : MonoBehaviour
 {
 
     public YouDied deathMessage;
+    public YouWin winMessage;
     public int waveWaitTime;
     
      void OnEnable() {
+        EventManager.StartListening(EventNames.PLAYER_DIED, HeDead);
+        EventManager.StartListening(EventNames.GAME_WON, HeWon);
+    }
+    
+    void Start()
+    {
         NextWave();
         EventManager.StartListening(EventNames.WAVE_END, NextWave);
         EventManager.StartListening(EventNames.PLAYER_DIED, HeDead);
@@ -18,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     void OnDisable() {
         EventManager.StopListening(EventNames.PLAYER_DIED, HeDead);
+        EventManager.StopListening(EventNames.GAME_WON, HeWon);
+        EventManager.StopListening(EventNames.WAVE_END, NextWave);
     }
     
     void HeDead() {
@@ -25,10 +34,15 @@ public class GameManager : MonoBehaviour
         Invoke("RestartGame", 5f);
     }
 
+    void HeWon() {
+        winMessage.GetComponent<Text>().enabled = true;
+        Invoke("RestartGame", 10f);
+    }
+
     void RestartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    
+
     void NextWave() {
         StartCoroutine(BeginWave());
     }

@@ -16,10 +16,13 @@ public class FreezeController : MonoBehaviour
     [HideInInspector]
     public float healRate;
 
+    public GameObject particles;
+
 
     void Start()
     {
         healRate = initHealRatePerSecond;
+        GetParticleSystem().Stop();
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class FreezeController : MonoBehaviour
         isFreezing = true;
 
         //Handle particles?
+        GetParticleSystem().Play();
     }
 
     void FreezeEnd()
@@ -61,6 +65,7 @@ public class FreezeController : MonoBehaviour
         tickCount = 0;
 
         //Handle particles
+        GetParticleSystem().Stop();
     }
 
     IEnumerator FreezeTick() 
@@ -83,5 +88,9 @@ public class FreezeController : MonoBehaviour
             //Let everyone know we're good to go
             EventManager.TriggerEvent(EventNames.FREEZE_TICK);
         }
+    }
+
+    private ParticleSystem GetParticleSystem() {
+        return particles.GetComponent<ParticleSystem>();
     }
 }
