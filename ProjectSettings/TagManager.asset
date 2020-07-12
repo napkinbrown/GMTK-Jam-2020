@@ -7,6 +7,10 @@ TagManager:
   - Ground
   - Enemy
   - Boundary
+  - BroccoliSpawner
+  - PizzaSpawner
+  - Wave
+  - Spawner
   layers:
   - Default
   - TransparentFX

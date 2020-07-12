@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int waveWaitTime;
+
     void Start()
     {
-        
+        NextWave();
+        EventManager.StartListening(EventNames.WAVE_END, NextWave);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void NextWave() {
+        StartCoroutine(BeginWave());
+    }
+
+    IEnumerator BeginWave() {
+        yield return new WaitForSeconds(waveWaitTime);
+        EventManager.TriggerEvent(EventNames.WAVE_START);
     }
 }
