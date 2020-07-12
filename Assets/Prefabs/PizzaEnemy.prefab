@@ -4864,8 +4864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpStrength: 8
-  rateOfAcceleration: 10
-  topHorizontalSpeed: 10
+  rateOfAcceleration: 20
+  topHorizontalSpeed: 20
   facingLeft: 1
   rb: {fileID: 5390654819521809576}
   enemyPlayerDist: 1
