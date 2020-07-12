@@ -18,16 +18,11 @@ public class EnemyDamageController : MonoBehaviour
 
         if(other.gameObject.tag == "Player") {
             if (!damageOnCooldown) {
-                Debug.Log("Damage");
-                DoDamage(other);
+                other.gameObject.GetComponent<EntityHealthController>().DamageCharacter(damageDealtPerTic);
                 StartCoroutine(DamageCooldown());
             }
             
         }
-    }
-
-    void DoDamage(Collider2D other) {
-        other.gameObject.GetComponent<EntityHealthController>().DamageCharacter(damageDealtPerTic);
     }
 
     IEnumerator DamageCooldown() {
