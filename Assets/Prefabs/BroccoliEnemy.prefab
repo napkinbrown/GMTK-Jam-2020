@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642463047259169156}
   - component: {fileID: 6369790852778926293}
+  - component: {fileID: 3479909598623204044}
   - component: {fileID: 4422289399625455161}
   - component: {fileID: 5643579724912746180}
   - component: {fileID: 4774924305375068573}
@@ -62,6 +63,19 @@ MonoBehaviour:
   bounceAngle: 80
   minBounceAngle: 20
   hoverDirection: {x: 0, y: 0}
+--- !u!114 &3479909598623204044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870255071624543409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524d3784ef753ab40825cbe987b3d152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 25
 --- !u!212 &4422289399625455161
 SpriteRenderer:
   m_ObjectHideFlags: 0

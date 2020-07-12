@@ -22,7 +22,7 @@ public class PlayerHealthController : EntityHealthController
         Melty,
         Melted
     }
-
+    
     
     void OnEnable() {
         EventManager.StartListening(EventNames.FREEZE_START, SetIsFreezingToTrue);
@@ -60,7 +60,6 @@ public class PlayerHealthController : EntityHealthController
 
     void ApplyMeltingDamage() {
         if(isAlive && !isFreezing && doMeltingDamage) {
-            // Debug.Log()
             DamageCharacter(meltingDamage);
             StartCoroutine(CoolDownMeltingDamage());
         }
@@ -129,6 +128,7 @@ public class PlayerHealthController : EntityHealthController
     }
 
     protected override void Die() {
-        Debug.LogError("Not yet implemented");
+        EventManager.TriggerEvent(EventNames.PLAYER_DIED);
+        Destroy(this.gameObject);
     }
 }
