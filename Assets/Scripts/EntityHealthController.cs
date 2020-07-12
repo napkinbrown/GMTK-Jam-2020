@@ -8,6 +8,7 @@ public abstract class EntityHealthController : MonoBehaviour
     public int currentHealth;
     [HideInInspector]
     public bool isAlive;
+    public AudioSource hurtSoundEffect;
 
     protected void Start() {
         isAlive = true;

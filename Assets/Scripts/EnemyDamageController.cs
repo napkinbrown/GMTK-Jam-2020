@@ -8,16 +8,24 @@ public class EnemyDamageController : MonoBehaviour
     public float secondPerTic;
 
     private bool damageOnCooldown;
+    private bool hurtOnCooldown;
+    EntityHealthController hc;
 
     void Start() {
         damageOnCooldown = false;
+        hurtOnCooldown = false;
     }
     
     void OnTriggerStay2D(Collider2D other) {
         if(other.gameObject.tag == "Player") {
             if (!damageOnCooldown) {
-                other.gameObject.GetComponent<EntityHealthController>().DamageCharacter(damageDealtPerTic);
+                hc = other.gameObject.GetComponent<EntityHealthController>();
+                hc.DamageCharacter(damageDealtPerTic);
                 StartCoroutine(DamageCooldown());
+                if (!hurtOnCooldown) {
+                    hc.hurtSoundEffect.Play();
+                    StartCoroutine(HurtSoundCooldown());
+                }
             }
             
         }
@@ -27,5 +35,11 @@ public class EnemyDamageController : MonoBehaviour
         damageOnCooldown = true;
         yield return new WaitForSeconds(secondPerTic);
         damageOnCooldown = false;
+    }
+
+    IEnumerator HurtSoundCooldown() {
+        hurtOnCooldown = true;
+        yield return new WaitForSeconds(1);
+        hurtOnCooldown = false;
     }
 }
