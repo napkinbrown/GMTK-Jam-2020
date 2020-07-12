@@ -69,7 +69,6 @@ MonoBehaviour:
   fireRatePerSecond: 10
   shotSpeed: 10
   reticle: {fileID: 185557680653955818, guid: 670adbd41aab3b742acd89a839299956, type: 3}
-  reticleDepth: 3.8
   responsivenessPercentage: 10
   projectile: {fileID: 8116697858890612796, guid: 269767c60e1ec4d98ab09922802a5459,
     type: 3}
@@ -85,10 +84,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7441d5c1d0749a5b36a3a3992f86b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 30
+  maxhealth: 1000
   currentHealth: 0
-  healthBar: {fileID: 1791083238477960969, guid: 53ca91ab70e864b9db6cdb20cebb8c93,
-    type: 3}
+  isAlive: 0
+  healthBar: {fileID: 0}
 --- !u!114 &-6600882518566419195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,9 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f0d6b2e33d04de5a5b9619c205a1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initHealRatePerSecond: 0.6
-  healthRateIncrease: 0.1
+  initHealRatePerSecond: 5
+  healthRateIncrease: 5
   ticksBetweenIncrease: 3
+  healRate: 0
 --- !u!212 &3175205290954174315
 SpriteRenderer:
   m_ObjectHideFlags: 0

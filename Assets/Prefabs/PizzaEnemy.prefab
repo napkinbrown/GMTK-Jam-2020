@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2181906970331344049}
   - component: {fileID: 2485862634534579557}
+  - component: {fileID: 7733205166002183038}
   - component: {fileID: 3878623351400061708}
   - component: {fileID: 5106666911498736625}
   - component: {fileID: 2650106261742080433}
@@ -49,14 +50,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpStrength: 8
-  rateOfAcceleration: 200
-  topHorizontalSpeed: 100
+  rateOfAcceleration: 10
+  topHorizontalSpeed: 10
   facingLeft: 1
   rb: {fileID: 5390654819521809576}
-  enemyPlayerDist: 4
-  lookDist: 5
+  enemyPlayerDist: 1
+  lookDist: 1
   sprite: {fileID: 3878623351400061708}
   player: {fileID: 0}
+--- !u!114 &7733205166002183038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333063805849530756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da0141ef0e8be74f9406a2e19c62580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxhealth: 50
+  currentHealth: 0
 --- !u!212 &3878623351400061708
 SpriteRenderer:
   m_ObjectHideFlags: 0

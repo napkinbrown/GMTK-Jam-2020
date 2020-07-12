@@ -45,7 +45,6 @@ public class MovementController : MonoBehaviour
 
     // Move a specified distance
     protected void MoveSideways(float accelerationDelta, Vector2 dist) {
-        Debug.Log("Moving " + dist);
         rb.AddForce(dist * accelerationDelta);
     }
 

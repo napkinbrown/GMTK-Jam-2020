@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealthController : MonoBehaviour
+public class PlayerHealthController : EntityHealthController
 {
-    public int maxhealth = 30;
-    public int currentHealth;
     public HealthBar healthBar;
 
     private FreezeController freezeController;
@@ -20,21 +18,15 @@ public class PlayerHealthController : MonoBehaviour
     }
     
     // Start is called before the first frame update
-    void Start()
+    protected new void Start()
     {
-        currentHealth = maxhealth;
+        base.Start();
         healthBar.SetMaxHealth(maxhealth);
         freezeController = this.GetComponentInParent<FreezeController>();
     }
 
-    void DamageCharacter(int damage) 
-    {
-        if(currentHealth - damage < 0) {
-            currentHealth = 0;
-        } else {
-            currentHealth -= damage;
-        }
-        
+    protected new void DamageCharacter(int damage) {
+        base.DamageCharacter(damage);
         healthBar.SetHealth(currentHealth);
     }
 
@@ -52,5 +44,9 @@ public class PlayerHealthController : MonoBehaviour
     void FreezeHeal() 
     {
         HealCharacter((int) freezeController.healRate);
+    }
+
+    protected override void Die() {
+        Debug.LogError("Not yet implemented");
     }
 }
