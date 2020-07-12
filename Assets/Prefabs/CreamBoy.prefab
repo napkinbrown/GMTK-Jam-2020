@@ -249,30 +249,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2337357015134647672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2641361644030101173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2d613d12a6b07d4cb85c0a5303dee68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpStrength: 8
-  rateOfAcceleration: 200
-  topHorizontalSpeed: 100
-  facingLeft: 0
-  rb: {fileID: 1525475926655427762}
-  healthController: {fileID: 5992235725450980406}
-  phase2JumpStrength: 12
-  phase2RateOfAcceleration: 300
-  phase2TopHorizontalSpeed: 200
-  phase3JumpStrength: 15
-  phase3RateOfAcceleration: 500
-  phase3TopHorizontalSpeed: 300
 --- !u!1001 &2337357014888432450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -387,6 +363,41 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: phase2JumpStrength
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: phase3JumpStrength
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: phase2RateOfAcceleration
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: phase3RateOfAcceleration
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: phase3TopHorizontalSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: phase2TopHorizontalSpeed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: healthController
+      value: 
+      objectReference: {fileID: 5992235725450980406}
     - target: {fileID: 3175205290954174315, guid: cd57db66d448944babebb4f0471022b1,
         type: 3}
       propertyPath: m_Sprite
@@ -435,9 +446,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7441d5c1d0749a5b36a3a3992f86b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &1525475926655427762 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 3838300087218710512, guid: cd57db66d448944babebb4f0471022b1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2337357014888432450}
-  m_PrefabAsset: {fileID: 0}
