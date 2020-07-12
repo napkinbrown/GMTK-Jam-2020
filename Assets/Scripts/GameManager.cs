@@ -11,13 +11,9 @@ public class GameManager : MonoBehaviour
     public int waveWaitTime;
     
      void OnEnable() {
-        EventManager.StartListening(EventNames.PLAYER_DIED, HeDead);
-    }
-    
-    void Start()
-    {
         NextWave();
         EventManager.StartListening(EventNames.WAVE_END, NextWave);
+        EventManager.StartListening(EventNames.PLAYER_DIED, HeDead);
     }
 
     void OnDisable() {
@@ -31,8 +27,9 @@ public class GameManager : MonoBehaviour
 
     void RestartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     
-    private void NextWave() {
+    void NextWave() {
         StartCoroutine(BeginWave());
     }
 
