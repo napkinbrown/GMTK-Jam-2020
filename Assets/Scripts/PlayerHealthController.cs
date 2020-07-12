@@ -4,25 +4,59 @@ using UnityEngine;
 
 public class PlayerHealthController : EntityHealthController
 {
+    public int meltingDamage;
+    public float meltingDelayInSecs;
     public HealthBar healthBar;
 
     private FreezeController freezeController;
+    private bool isFreezing;
+    private bool doMeltingDamage;
 
     
     void OnEnable() {
+        EventManager.StartListening(EventNames.FREEZE_START, SetIsFreezingToTrue);
+        EventManager.StartListening(EventNames.FREEZE_STOP, SetIsFreezingToFalse);
         EventManager.StartListening(EventNames.FREEZE_TICK, FreezeHeal);
     }
 
     void OnDisable() {
+        EventManager.StopListening(EventNames.FREEZE_START, SetIsFreezingToTrue);
+        EventManager.StopListening(EventNames.FREEZE_STOP, SetIsFreezingToFalse);
         EventManager.StopListening(EventNames.FREEZE_TICK, FreezeHeal);
     }
-    
-    // Start is called before the first frame update
+
+    void SetIsFreezingToTrue() {
+        isFreezing = true;
+    }
+
+    void SetIsFreezingToFalse() {
+        isFreezing = false;
+    }
+
     protected new void Start()
     {
         base.Start();
         healthBar.SetMaxHealth(maxhealth);
         freezeController = this.GetComponentInParent<FreezeController>();
+        doMeltingDamage = true;
+    }
+
+    void Update() {
+        ApplyMeltingDamage();
+    }
+
+    void ApplyMeltingDamage() {
+        if(isAlive && !isFreezing && doMeltingDamage) {
+            // Debug.Log()
+            DamageCharacter(meltingDamage);
+            StartCoroutine(CoolDownMeltingDamage());
+        }
+    }
+
+    IEnumerator CoolDownMeltingDamage() {
+        doMeltingDamage = false;
+        yield return new WaitForSeconds(meltingDelayInSecs);
+        doMeltingDamage = true;
     }
 
     protected new void DamageCharacter(int damage) {
