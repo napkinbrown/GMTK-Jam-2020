@@ -19,7 +19,15 @@ public class BroccoliMovementController : EnemyMovementController
         MoveSideways(rateOfAcceleration, hoverDirection);
     }
 
+    void OnTriggerEnter2D(Collider2D target) {
+        Bounce(target);
+    }
+
     void OnTriggerStay2D(Collider2D target) {
+        Bounce(target);
+    }
+
+    private void Bounce(Collider2D target) {
         if (target.tag == "Boundary") {
             hoverDirection = RandomVector(bounceAngle, minBounceAngle);
             MoveSideways(rateOfAcceleration, hoverDirection);
@@ -31,7 +39,7 @@ public class BroccoliMovementController : EnemyMovementController
     }
 
     private void Attack() {
-        Debug.Log("Broccoli attacking");
+        Debug.Log("Broccoli hurts itself in its confusion");
         MoveSideways(jumpStrength, GetVectorDistance(player));
         canAttack = false;
         StartCoroutine(DiveCooldown());
