@@ -52,9 +52,12 @@ MonoBehaviour:
   fireRatePerSecond: 10
   shotSpeed: 10
   reticle: {fileID: 185557680653955818, guid: 670adbd41aab3b742acd89a839299956, type: 3}
-  responsivenessPercentage: 10
+  phase1ResponsivenessPercentage: 100
+  phase2ResponsivenessPercentage: 20
+  phase3ResponsivenessPercentage: 3
   projectile: {fileID: 8116697858890612796, guid: 269767c60e1ec4d98ab09922802a5459,
     type: 3}
+  healthController: {fileID: -916685423385219212}
 --- !u!114 &-916685423385219212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,9 +71,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhealth: 1000
-  currentHealth: 100
-  selfHurtMeltingDamage: 0
+  currentHealth: 1
+  isAlive: 0
+  meltingDamage: 10
+  meltingDelayInSecs: 1
   healthBar: {fileID: 0}
+  phase1Sprite: {fileID: 3759166071830090798, guid: 3a9ef22eab4915949afa8145557e3e2f,
+    type: 3}
+  phase2Sprite: {fileID: 6816033054071968501, guid: 3a9ef22eab4915949afa8145557e3e2f,
+    type: 3}
+  phase3Sprite: {fileID: 7044750333750371416, guid: 3a9ef22eab4915949afa8145557e3e2f,
+    type: 3}
 --- !u!114 &-6600882518566419195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initHealRatePerSecond: 5
-  healthRateIncrease: 5
+  healthRateIncrease: 2
   ticksBetweenIncrease: 3
   healRate: 0
 --- !u!212 &3175205290954174315
@@ -192,3 +203,10 @@ MonoBehaviour:
   topHorizontalSpeed: 100
   facingLeft: 0
   rb: {fileID: 3838300087218710512}
+  healthController: {fileID: -916685423385219212}
+  phase2JumpStrength: 12
+  phase2RateOfAcceleration: 500
+  phase2TopHorizontalSpeed: 300
+  phase3JumpStrength: 15
+  phase3RateOfAcceleration: 1000
+  phase3TopHorizontalSpeed: 500

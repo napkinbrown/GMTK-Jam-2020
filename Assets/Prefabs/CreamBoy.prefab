@@ -256,64 +256,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2337357014895117695}
     m_Modifications:
-    - target: {fileID: -6600882518566419195, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: initHealRatePerSecond
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -6600882518566419195, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: healthRateIncrease
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6027297628337274867, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: healthController
-      value: 
-      objectReference: {fileID: 5992235725450980406}
-    - target: {fileID: -6027297628337274867, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase1ResponsivenessPercentage
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -6027297628337274867, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase2ResponsivenessPercentage
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: -6027297628337274867, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase3ResponsivenessPercentage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: maxhealth
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: currentHealth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase1Sprite
-      value: 
-      objectReference: {fileID: 3759166071830090798, guid: 3a9ef22eab4915949afa8145557e3e2f,
-        type: 3}
-    - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase2Sprite
-      value: 
-      objectReference: {fileID: 6816033054071968501, guid: 3a9ef22eab4915949afa8145557e3e2f,
-        type: 3}
-    - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase3Sprite
-      value: 
-      objectReference: {fileID: 7044750333750371416, guid: 3a9ef22eab4915949afa8145557e3e2f,
-        type: 3}
     - target: {fileID: 2127351274, guid: cd57db66d448944babebb4f0471022b1, type: 3}
       propertyPath: m_Offset.y
       value: -0.009120628
@@ -401,41 +343,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.8
       objectReference: {fileID: 0}
-    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase2JumpStrength
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase3JumpStrength
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase2RateOfAcceleration
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase3RateOfAcceleration
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase3TopHorizontalSpeed
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: phase2TopHorizontalSpeed
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337357015134647672, guid: cd57db66d448944babebb4f0471022b1,
-        type: 3}
-      propertyPath: healthController
-      value: 
-      objectReference: {fileID: 5992235725450980406}
     - target: {fileID: 3175205290954174315, guid: cd57db66d448944babebb4f0471022b1,
         type: 3}
       propertyPath: m_Sprite
@@ -472,15 +379,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2337357014888432450}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5992235725450980406 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2337357014888432450}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2641361644030101173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7441d5c1d0749a5b36a3a3992f86b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
