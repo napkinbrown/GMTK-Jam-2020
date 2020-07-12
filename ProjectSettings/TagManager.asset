@@ -10,6 +10,7 @@ TagManager:
   - BroccoliSpawner
   - PizzaSpawner
   - Wave
+  - Spawner
   layers:
   - Default
   - TransparentFX

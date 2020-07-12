@@ -43,7 +43,7 @@ public class SpawnController : MonoBehaviour
             int waveEnemies = enemiesToSpawn / numSpawners;
             int numPizzas = (int) Mathf.Ceil(waveEnemies * currentWave.fractionArePizza);
             int numBroccolis = waveEnemies - numPizzas;
-            
+            Debug.Log("Spawning p: " + numPizzas + " b: " + numBroccolis + " at " + point);
             SpawnEnemy(pizzaEnemy, point, numPizzas);
             SpawnEnemy(broccoliEnemy, point, numBroccolis);
         }
@@ -55,7 +55,7 @@ public class SpawnController : MonoBehaviour
 
     private void SpawnEnemy(GameObject enemy, Transform point, int count) {
         for (int i = 0; i < count; i++) {
-            Instantiate(pizzaEnemy, point);
+            Instantiate(enemy, point);
         }
     }
 
