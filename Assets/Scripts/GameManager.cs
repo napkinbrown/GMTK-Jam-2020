@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         NextWave();
         EventManager.StartListening(EventNames.WAVE_END, NextWave);
+        EventManager.StartListening(EventNames.PLAYER_DIED, HeDead);
     }
 
     void OnDisable() {
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void NextWave() {
+    void NextWave() {
         StartCoroutine(BeginWave());
     }
 

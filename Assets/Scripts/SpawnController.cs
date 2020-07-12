@@ -17,7 +17,6 @@ public class SpawnController : MonoBehaviour
     {
         wave = 1;
         SetEnemyObjects();
-        BeginSpawning();
         EventManager.StartListening(EventNames.WAVE_START, BeginSpawning);
         EventManager.StartListening(EventNames.ENEMY_DIED, EnemyDied);
     }

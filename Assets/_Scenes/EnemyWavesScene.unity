@@ -1069,6 +1069,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6550580343783445289, guid: 1395f37d597374d65a7ac2656e99a348,
+        type: 3}
+      propertyPath: waveWaitTime
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1395f37d597374d65a7ac2656e99a348, type: 3}
 --- !u!4 &817759571 stripped
@@ -2719,11 +2724,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5570139616751133494, guid: db10fd7d2b73191449cfb6db1ff91f7b,
-        type: 3}
-      propertyPath: numEnemies
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5607225574224630456, guid: db10fd7d2b73191449cfb6db1ff91f7b,
         type: 3}
       propertyPath: m_Name
