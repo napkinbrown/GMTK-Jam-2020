@@ -23,9 +23,11 @@ public class SprinkleScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         EntityHealthController healthController = other.gameObject.GetComponent<EntityHealthController>();
         if (healthController && healthController.GetType() != typeof(PlayerHealthController)) {
-            Debug.Log("Hit " + other.gameObject);
             healthController.DamageCharacter(damage);
-            Destroy(this);
+        }
+
+        if (other.gameObject.tag != "Player") {
+            Destroy(this.gameObject);
         }
     }
 
