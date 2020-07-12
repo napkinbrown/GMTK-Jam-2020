@@ -18,7 +18,7 @@ public class SpawnController : MonoBehaviour
         wave = 1;
         SetEnemyObjects();
         BeginSpawning();
-        EventManager.TriggerEvent(EventNames.WAVE_START);
+        EventManager.StartListening(EventNames.WAVE_START, BeginSpawning);
         EventManager.StartListening(EventNames.ENEMY_DIED, EnemyDied);
     }
 
@@ -28,7 +28,7 @@ public class SpawnController : MonoBehaviour
     }
 
     private void BeginSpawning(){
-        EventManager.TriggerEvent(EventNames.WAVE_START);
+        Debug.Log("Starting new wave");
 
         currentWave = waveSpawner.transform.GetChild(wave).
                             gameObject.GetComponent<WaveController>();
