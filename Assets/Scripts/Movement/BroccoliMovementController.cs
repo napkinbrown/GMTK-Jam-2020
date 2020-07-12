@@ -42,6 +42,15 @@ public class BroccoliMovementController : EnemyMovementController
 
     protected override void ApplySidewaysMovement() {
         if (canAttack) Attack();
+        base.ApplySidewaysMovement();
+        CapVerticalSpeed();
+    }
+
+    protected void CapVerticalSpeed() {
+        if (Mathf.Abs(rb.velocity.y) > GetTopHorizontalSpeed() * Time.deltaTime) {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Sign(rb.velocity.y) * GetTopHorizontalSpeed() * Time.deltaTime);
+            // new Vector2(Mathf.Sign(rb.velocity.x) * GetTopHorizontalSpeed() * Time.deltaTime, rb.velocity.y);
+        }
     }
 
     private void Attack() {
