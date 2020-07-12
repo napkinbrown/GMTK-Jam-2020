@@ -49,9 +49,24 @@ public class MovementController : MonoBehaviour
     }
 
     protected void CapHorizontalSpeed() {
-        if (Mathf.Abs(rb.velocity.x) > topHorizontalSpeed * Time.deltaTime) {
-            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * topHorizontalSpeed * Time.deltaTime, rb.velocity.y);
+        if (Mathf.Abs(rb.velocity.x) > GetTopHorizontalSpeed() * Time.deltaTime) {
+            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * GetTopHorizontalSpeed() * Time.deltaTime, rb.velocity.y);
         }
+    }
+
+    protected virtual float GetTopHorizontalSpeed()
+    {
+        return topHorizontalSpeed;
+    }
+
+    protected virtual float GetJumpStrength()
+    {
+        return jumpStrength;
+    }
+
+    protected virtual float GetRateOfAccelaration()
+    {
+        return rateOfAcceleration;
     }
 
     protected virtual void CheckForJump() {
@@ -66,7 +81,7 @@ public class MovementController : MonoBehaviour
 
     protected void AddJumpForce() {
         rb.velocity = new Vector2(rb.velocity.x, 0);
-        rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse); 
+        rb.AddForce(Vector2.up * GetJumpStrength(), ForceMode2D.Impulse); 
     }
 
     protected float GetDistance(GameObject target) {

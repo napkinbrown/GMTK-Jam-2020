@@ -12,4 +12,5 @@ public class EventNames : MonoBehaviour
     public static readonly string WAVE_END = "Wave End";
     
     public static readonly string ENEMY_DIED = "Enemy Died";
+    public static readonly string PLAYER_DIED = "Player died";
 }

@@ -8,9 +8,13 @@ public class PlayerShotController : MonoBehaviour
     public float fireRatePerSecond = 2;
     public int shotSpeed = 200;
     public GameObject reticle;
-    public float responsivenessPercentage;
+    public float phase1ResponsivenessPercentage;
+    public float phase2ResponsivenessPercentage;
+    public float phase3ResponsivenessPercentage;
 
     public GameObject projectile;
+
+    public PlayerHealthController healthController;
 
     private ReticleController reticleController;
     private bool canShoot = true;
@@ -35,7 +39,7 @@ public class PlayerShotController : MonoBehaviour
     void SetReticleParameters() {
         reticleController = reticle.GetComponent<ReticleController>();
         reticleController.reticleDepth = Camera.main.WorldToScreenPoint(this.transform.transform.position).z;
-        reticleController.responsivenessPercentage = this.responsivenessPercentage;
+        reticleController.responsivenessPercentage = GetResponsivenessPercentage();
     }
 
      void Fire()
@@ -55,6 +59,22 @@ public class PlayerShotController : MonoBehaviour
         return heading.normalized;
     }
 
+    private float GetResponsivenessPercentage()
+    {
+        switch(healthController.GetHealthPhase())
+        {
+            case PlayerHealthController.HealthPhase.Solid:
+               return phase1ResponsivenessPercentage;
+         
+            case PlayerHealthController.HealthPhase.Melty:
+                return phase2ResponsivenessPercentage;
+            
+            case PlayerHealthController.HealthPhase.Melted:
+                return phase3ResponsivenessPercentage;
+        }
+        return phase1ResponsivenessPercentage;
+    }
+
      IEnumerator ShootCooldown() {
          canShoot = false;
          yield return new WaitForSeconds(1/fireRatePerSecond);
@@ -67,6 +87,7 @@ public class PlayerShotController : MonoBehaviour
         if (Input.GetButton("Fire1")){
              Fire();
         }
+        reticleController.responsivenessPercentage = GetResponsivenessPercentage();
     
     }
 

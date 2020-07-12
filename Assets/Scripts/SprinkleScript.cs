@@ -25,6 +25,7 @@ public class SprinkleScript : MonoBehaviour
         if (healthController && healthController.GetType() != typeof(PlayerHealthController)) {
             Debug.Log("Hit " + other.gameObject);
             healthController.DamageCharacter(damage);
+            Destroy(this);
         }
     }
 

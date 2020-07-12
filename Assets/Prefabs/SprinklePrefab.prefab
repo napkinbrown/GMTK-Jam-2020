@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4716349208451219709}
   - component: {fileID: 4606385856118931566}
   - component: {fileID: -529592570383047599}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: SprinklePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

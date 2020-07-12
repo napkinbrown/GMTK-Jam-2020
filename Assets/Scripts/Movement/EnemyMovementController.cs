@@ -9,6 +9,10 @@ public class EnemyMovementController : MovementController
     public SpriteRenderer sprite;
     public GameObject player;
 
+    void Start() {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void FixedUpdate() {
         ApplySidewaysMovement();
         CheckDirection();
