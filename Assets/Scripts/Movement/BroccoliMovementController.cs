@@ -39,7 +39,6 @@ public class BroccoliMovementController : EnemyMovementController
     }
 
     private void Attack() {
-        Debug.Log("Broccoli hurts itself in its confusion");
         MoveSideways(jumpStrength, GetVectorDistance(player));
         canAttack = false;
         StartCoroutine(DiveCooldown());

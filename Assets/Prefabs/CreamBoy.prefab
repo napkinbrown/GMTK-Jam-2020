@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2337357015790007082}
   - component: {fileID: 2337357015790007083}
   - component: {fileID: 2337357015790007076}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: CreamBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 2337357015990570404}
   - component: {fileID: 2337357015990570411}
   - component: {fileID: 2337357015990570410}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ConeHat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ PrefabInstance:
     - target: {fileID: -6600882518566419195, guid: cd57db66d448944babebb4f0471022b1,
         type: 3}
       propertyPath: healthRateIncrease
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
         type: 3}
@@ -275,6 +275,16 @@ PrefabInstance:
         type: 3}
       propertyPath: currentHealth
       value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: meltingDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: meltingDelayInSecs
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2127351274, guid: cd57db66d448944babebb4f0471022b1, type: 3}
       propertyPath: m_Offset.y
@@ -296,7 +306,7 @@ PrefabInstance:
     - target: {fileID: 344514073757533687, guid: cd57db66d448944babebb4f0471022b1,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1657450961079225631, guid: cd57db66d448944babebb4f0471022b1,
         type: 3}
