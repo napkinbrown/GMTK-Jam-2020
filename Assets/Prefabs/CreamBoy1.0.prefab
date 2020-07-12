@@ -9,15 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1657450961079225631}
-  - component: {fileID: 6372443839826338265}
   - component: {fileID: -6027297628337274867}
   - component: {fileID: -916685423385219212}
   - component: {fileID: -6600882518566419195}
   - component: {fileID: 3175205290954174315}
   - component: {fileID: 2127351274}
   - component: {fileID: 3838300087218710512}
-  m_Layer: 0
-  m_Name: CreamBoy
+  - component: {fileID: 2337357015134647672}
+  m_Layer: 10
+  m_Name: CreamBoy1.0
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,28 +32,11 @@ Transform:
   m_GameObject: {fileID: 344514073757533687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6372443839826338265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344514073757533687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2d613d12a6b07d4cb85c0a5303dee68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpStrength: 8
-  rateOfAcceleration: 200
-  topHorizontalSpeed: 100
-  facingLeft: 0
-  rb: {fileID: 3838300087218710512}
 --- !u!114 &-6027297628337274867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +52,6 @@ MonoBehaviour:
   fireRatePerSecond: 10
   shotSpeed: 10
   reticle: {fileID: 185557680653955818, guid: 670adbd41aab3b742acd89a839299956, type: 3}
-  reticleDepth: 3.8
   responsivenessPercentage: 10
   projectile: {fileID: 8116697858890612796, guid: 269767c60e1ec4d98ab09922802a5459,
     type: 3}
@@ -85,10 +67,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7441d5c1d0749a5b36a3a3992f86b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 30
-  currentHealth: 0
-  healthBar: {fileID: 1791083238477960969, guid: 53ca91ab70e864b9db6cdb20cebb8c93,
-    type: 3}
+  maxhealth: 1000
+  currentHealth: 100
+  selfHurtMeltingDamage: 0
+  healthBar: {fileID: 0}
 --- !u!114 &-6600882518566419195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,9 +83,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f0d6b2e33d04de5a5b9619c205a1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initHealRatePerSecond: 0.6
-  healthRateIncrease: 0.1
+  initHealRatePerSecond: 5
+  healthRateIncrease: 5
   ticksBetweenIncrease: 3
+  healRate: 0
 --- !u!212 &3175205290954174315
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -140,10 +123,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1947713209
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 37bb9d9585b3f47788401e6c3d56e800, type: 3}
+  m_Sprite: {fileID: 3759166071830090798, guid: 3a9ef22eab4915949afa8145557e3e2f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,9 +151,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.021045879, y: -0.009120628}
   serializedVersion: 2
-  m_Radius: 0.29
+  m_Radius: 0.6095463
 --- !u!50 &3838300087218710512
 Rigidbody2D:
   serializedVersion: 4
@@ -191,3 +175,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2337357015134647672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344514073757533687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d613d12a6b07d4cb85c0a5303dee68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpStrength: 8
+  rateOfAcceleration: 200
+  topHorizontalSpeed: 100
+  facingLeft: 0
+  rb: {fileID: 3838300087218710512}
