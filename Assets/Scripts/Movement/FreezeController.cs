@@ -78,7 +78,6 @@ public class FreezeController : MonoBehaviour
             {
                 //modify healrate
                 healRate += healthRateIncrease;
-                Debug.Log("Heal Rate Increased: " + healRate);
             }
 
             //Let everyone know we're good to go
