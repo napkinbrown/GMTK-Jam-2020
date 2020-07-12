@@ -36,7 +36,7 @@ public class SpawnController : MonoBehaviour
             numEnemies = currentWave.numEnemies;
             SpawnWave(numEnemies);
         } else {
-            Debug.Log("No more waves found, game ending.")
+            Debug.Log("No more waves found, game ending.");
             EventManager.TriggerEvent(EventNames.GAME_WON);
         }
 
@@ -58,7 +58,7 @@ public class SpawnController : MonoBehaviour
 
     private void CheckWaveFinished() {
         if (numEnemies <= 0) {
-            Debug.Log("All enemies dead, wave ended.")
+            Debug.Log("All enemies dead, wave ended.");
             wave++;
             EventManager.TriggerEvent(EventNames.WAVE_END);
         }
