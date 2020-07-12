@@ -8,33 +8,37 @@ public class BroccoliMovementController : EnemyMovementController
     // MovementController's jumpStrength will be attack speed
     // Accel will be hover speed
     public bool canAttack;
+    public float attackRate;
     public float bounceAngle;
     public float minBounceAngle;
-    public float diveRate;
     public Vector2 hoverDirection;
 
-    void OnStart() {
+    void Start() {
         hoverDirection = RandomVector(bounceAngle, minBounceAngle);
         StartCoroutine(DiveCooldown());
         MoveSideways(rateOfAcceleration, hoverDirection);
     }
 
-    void OnTriggerEnter2D(Collider2D target) {
-        if (target.tag == "Boundary")
+    void OnTriggerStay2D(Collider2D target) {
+        if (target.tag == "Boundary") {
             hoverDirection = RandomVector(bounceAngle, minBounceAngle);
-    }
-
-    protected override void ApplySidewaysMovement() {
-
-        if (canAttack) {
-            base.ApplySidewaysMovement();
-            canAttack = false;
-            StartCoroutine(DiveCooldown());
+            MoveSideways(rateOfAcceleration, hoverDirection);
         }
     }
 
+    protected override void ApplySidewaysMovement() {
+        if (canAttack) Attack();
+    }
+
+    private void Attack() {
+        Debug.Log("Broccoli attacking");
+        MoveSideways(jumpStrength, GetVectorDistance(player));
+        canAttack = false;
+        StartCoroutine(DiveCooldown());
+    }
+
     IEnumerator DiveCooldown() {
-         yield return new WaitForSeconds(diveRate);
+         yield return new WaitForSeconds(attackRate);
          canAttack = true;
     }
 
