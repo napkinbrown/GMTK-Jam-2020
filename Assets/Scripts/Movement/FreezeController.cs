@@ -26,6 +26,7 @@ public class FreezeController : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire2")) {
+            Debug.Log("starting freeze");
             FreezeStart();
         }
         else if (Input.GetButtonUp("Fire2")) {
@@ -78,7 +79,6 @@ public class FreezeController : MonoBehaviour
             {
                 //modify healrate
                 healRate += healthRateIncrease;
-                Debug.Log("Heal Rate Increased: " + healRate);
             }
 
             //Let everyone know we're good to go

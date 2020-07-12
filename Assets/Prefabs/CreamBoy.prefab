@@ -77,12 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353252081aca61c45a794a2b497deeb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRatePerSecond: 10
-  shotSpeed: 10
-  reticle: {fileID: 185557680653955818, guid: 670adbd41aab3b742acd89a839299956, type: 3}
-  responsivenessPercentage: 10
-  projectile: {fileID: 8116697858890612796, guid: 269767c60e1ec4d98ab09922802a5459,
-    type: 3}
   player: {fileID: 2641361644030101173}
   xOffset: 0.03
   yOffset: -0.3
@@ -94,14 +88,6 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2337357015790007081}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7441d5c1d0749a5b36a3a3992f86b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxhealth: 1000
-  currentHealth: 0
-  isAlive: 0
-  healthBar: {fileID: 0}
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -189,10 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353252081aca61c45a794a2b497deeb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initHealRatePerSecond: 5
-  healthRateIncrease: 5
-  ticksBetweenIncrease: 3
-  healRate: 0
   player: {fileID: 2641361644030101173}
   xOffset: 0.27
   yOffset: 0.4
@@ -284,6 +266,13 @@ MonoBehaviour:
   topHorizontalSpeed: 100
   facingLeft: 0
   rb: {fileID: 1525475926655427762}
+  healthController: {fileID: 5992235725450980406}
+  phase2JumpStrength: 12
+  phase2RateOfAcceleration: 300
+  phase2TopHorizontalSpeed: 200
+  phase3JumpStrength: 15
+  phase3RateOfAcceleration: 500
+  phase3TopHorizontalSpeed: 300
 --- !u!1001 &2337357014888432450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,6 +280,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2337357014895117695}
     m_Modifications:
+    - target: {fileID: -6600882518566419195, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: initHealRatePerSecond
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6600882518566419195, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: healthRateIncrease
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: maxhealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
+        type: 3}
+      propertyPath: currentHealth
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 2127351274, guid: cd57db66d448944babebb4f0471022b1, type: 3}
       propertyPath: m_Offset.y
       value: -0.009120628
@@ -414,6 +423,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2337357014888432450}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5992235725450980406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -916685423385219212, guid: cd57db66d448944babebb4f0471022b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2337357014888432450}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641361644030101173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7441d5c1d0749a5b36a3a3992f86b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1525475926655427762 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3838300087218710512, guid: cd57db66d448944babebb4f0471022b1,
