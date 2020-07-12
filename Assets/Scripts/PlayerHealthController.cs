@@ -13,6 +13,7 @@ public class PlayerHealthController : EntityHealthController
     public Sprite phase3Sprite;
 
     private SpriteRenderer spriteRenderer;
+    public AudioSource hurtSoundEffect;
     private FreezeController freezeController;
     private bool isFreezing;
     private bool doMeltingDamage;
