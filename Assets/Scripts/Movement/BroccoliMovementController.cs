@@ -7,20 +7,25 @@ public class BroccoliMovementController : EnemyMovementController
     
     // MovementController's jumpStrength will be attack speed
     // Accel will be hover speed
-    public bool canAttack;
+    private bool canAttack;
     public float attackRate;
+    private bool canBounce;
+    public float bounceRate;
     public float bounceAngle;
     public float minBounceAngle;
-    public Vector2 hoverDirection;
+    private Vector2 hoverDirection;
 
     void Start() {
         hoverDirection = RandomVector(bounceAngle, minBounceAngle);
         StartCoroutine(DiveCooldown());
         MoveSideways(rateOfAcceleration, hoverDirection);
+        canAttack = true;
+        canBounce = true;
     }
 
     void OnTriggerEnter2D(Collider2D target) {
         Bounce(target);
+        canBounce = false;
     }
 
     void OnTriggerStay2D(Collider2D target) {
@@ -28,9 +33,10 @@ public class BroccoliMovementController : EnemyMovementController
     }
 
     private void Bounce(Collider2D target) {
-        if (target.tag == "Boundary") {
-            hoverDirection = RandomVector(bounceAngle, minBounceAngle);
+        if (target.tag == "Boundary" && canBounce) {
+            hoverDirection = GetRandomVector(bounceAngle, minBounceAngle);
             MoveSideways(rateOfAcceleration, hoverDirection);
+            StartCoroutine(BounceCooldown());
         }
     }
 
@@ -39,7 +45,6 @@ public class BroccoliMovementController : EnemyMovementController
     }
 
     private void Attack() {
-        Debug.Log("Broccoli hurts itself in its confusion");
         MoveSideways(jumpStrength, GetVectorDistance(player));
         canAttack = false;
         StartCoroutine(DiveCooldown());
@@ -50,9 +55,10 @@ public class BroccoliMovementController : EnemyMovementController
          canAttack = true;
     }
 
-    public Vector2 RandomVector(float angle, float angleMin){
-        float random = Random.value * angle + angleMin;
-        return new Vector2(Mathf.Cos(random), Mathf.Sin(random));
+    // To chill out broccoli's wacky bouncing
+    IEnumerator BounceCooldown() {
+         yield return new WaitForSeconds(bounceRate);
+         canBounce = true;
     }
 
 }
