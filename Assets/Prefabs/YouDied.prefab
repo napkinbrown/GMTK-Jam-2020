@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 445549510538490594}
   - component: {fileID: 7248374851922533829}
   - component: {fileID: 5057333922621313453}
+  - component: {fileID: -6467029118127353066}
   m_Layer: 5
   m_Name: YouDied
   m_TagString: Untagged
@@ -78,3 +79,15 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: YOU DEAD
+--- !u!114 &-6467029118127353066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164313027392908373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f302646f8e6444e7951531fe5fd54d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
