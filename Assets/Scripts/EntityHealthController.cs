@@ -6,8 +6,11 @@ public abstract class EntityHealthController : MonoBehaviour
 {
     public int maxhealth;
     public int currentHealth;
+    [HideInInspector]
+    public bool isAlive;
 
     protected void Start() {
+        isAlive = true;
         currentHealth = maxhealth;
     }
 
@@ -19,7 +22,8 @@ public abstract class EntityHealthController : MonoBehaviour
             currentHealth -= damage;
         }
 
-        if(damage <= 0) {
+        if(currentHealth <= 0) {
+            isAlive = false;
             Die();
         }
     }
