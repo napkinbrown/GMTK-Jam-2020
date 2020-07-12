@@ -16,7 +16,7 @@ public class BroccoliMovementController : EnemyMovementController
     private Vector2 hoverDirection;
 
     void Start() {
-        hoverDirection = RandomVector(bounceAngle, minBounceAngle);
+        hoverDirection = GetRandomVector(bounceAngle, minBounceAngle);
         StartCoroutine(DiveCooldown());
         MoveSideways(rateOfAcceleration, hoverDirection);
         canAttack = true;

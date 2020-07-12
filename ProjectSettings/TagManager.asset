@@ -9,6 +9,7 @@ TagManager:
   - Boundary
   - BroccoliSpawner
   - PizzaSpawner
+  - Wave
   layers:
   - Default
   - TransparentFX

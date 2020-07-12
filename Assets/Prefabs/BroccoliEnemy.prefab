@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &870255071624543409
+--- !u!1 &6582106269361743412
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,13 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1642463047259169156}
-  - component: {fileID: 6369790852778926293}
-  - component: {fileID: 4422289399625455161}
-  - component: {fileID: 5643579724912746180}
-  - component: {fileID: 4774924305375068573}
-  - component: {fileID: 7966697257951119176}
-  - component: {fileID: 1379350659}
+  - component: {fileID: 9023526389781335574}
+  - component: {fileID: 5021519319969437619}
+  - component: {fileID: 5662893051752850368}
+  - component: {fileID: 7754497700612614109}
+  - component: {fileID: 2588937046862182553}
+  - component: {fileID: 549196278805384186}
+  - component: {fileID: 6597026064673142488}
   m_Layer: 11
   m_Name: BroccoliEnemy
   m_TagString: Enemy
@@ -22,13 +22,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1642463047259169156
+--- !u!4 &9023526389781335574
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870255071624543409}
+  m_GameObject: {fileID: 6582106269361743412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.4, y: 1.74, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
@@ -36,13 +36,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6369790852778926293
+--- !u!114 &5021519319969437619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870255071624543409}
+  m_GameObject: {fileID: 6582106269361743412}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3929d2625afd8424b87a5d9bbf1f773d, type: 3}
@@ -52,23 +52,22 @@ MonoBehaviour:
   rateOfAcceleration: 50
   topHorizontalSpeed: 10
   facingLeft: 0
-  rb: {fileID: 4774924305375068573}
+  rb: {fileID: 2588937046862182553}
   enemyPlayerDist: 0
   lookDist: 0
-  sprite: {fileID: 4422289399625455161}
+  sprite: {fileID: 5662893051752850368}
   player: {fileID: 0}
-  canAttack: 0
   attackRate: 4
+  bounceRate: 0
   bounceAngle: 80
   minBounceAngle: 20
-  hoverDirection: {x: 0, y: 0}
---- !u!212 &4422289399625455161
+--- !u!212 &5662893051752850368
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870255071624543409}
+  m_GameObject: {fileID: 6582106269361743412}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -113,14 +112,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5643579724912746180
+--- !u!95 &7754497700612614109
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870255071624543409}
+  m_GameObject: {fileID: 6582106269361743412}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0305bfc32b296564bb849ed5fb92e338, type: 2}
@@ -132,14 +131,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &4774924305375068573
+--- !u!50 &2588937046862182553
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870255071624543409}
+  m_GameObject: {fileID: 6582106269361743412}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -153,13 +152,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7966697257951119176
+--- !u!61 &549196278805384186
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870255071624543409}
+  m_GameObject: {fileID: 6582106269361743412}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -179,13 +178,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.33, y: 1.44}
   m_EdgeRadius: 0
---- !u!61 &1379350659
+--- !u!61 &6597026064673142488
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870255071624543409}
+  m_GameObject: {fileID: 6582106269361743412}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
